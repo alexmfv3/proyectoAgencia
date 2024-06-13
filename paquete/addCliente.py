@@ -5,8 +5,13 @@ def addCliente(lista_clientes):
         try:
             # Preguntamos al usuario el ID del cliente
             idCliente = int(input('Introduce el ID del cliente: '))
-            # Si es un valor numérico, salimos del bucle infinito
-            break
+
+            # Validamos que el ID de cliente sea correcto
+            if idCliente <= 0:
+                print('Debes introducir un ID de Cliente válido!!')
+            else:
+                # Si es un valor numérico, salimos del bucle infinito
+                break
         except ValueError:
             # Si el ID del cliente es inválido, mostramos mensaje de error
             print('Debes introducir un ID de cliente válido!!')
