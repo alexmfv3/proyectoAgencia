@@ -5,8 +5,13 @@ def addDestino(lista_destinos):
         try:
             # Preguntamos al usuario por el código
             codDestino = int(input('Introduce el codigo del destino: '))
-            # Si es un valor numérico, salimos del bucle infinito
-            break
+
+            # Validamos que el código de destino sea correcto
+            if codDestino <= 0:
+                print('Debes introducir un código válido!!')
+            else:
+                # Si es un valor numérico, salimos del bucle infinito
+                break
         except ValueError:
             # Si el código es inválido, mostramos mensaje de error
             print('Debes introducir un código de destino válido!!')
@@ -26,8 +31,12 @@ def addDestino(lista_destinos):
         try:
             # Preguntamos al usuario por el importe
             prcDestino = float(input('Introduce el precio del destino: '))
+            # Validación de que el precio sea positivo (¡AQUÍ NO REGALAMOS DINERO!)
+            if prcDestino < 0:
+                print('Debes introducir un precio válido!!')
+            else:
+                break
             # Si es un valor numérico, salimos del bucle infinito
-            break
         except ValueError:
             # Si el importe es inválido, mostramos mensaje de error
             print('Debes introducir un precio válido!!')
